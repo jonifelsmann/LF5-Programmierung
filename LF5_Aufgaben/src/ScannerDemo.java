@@ -10,7 +10,6 @@ public class ScannerDemo {
         boolean wahrheitswert=false;
         char buchstabe=' ';
         
-        s
 
         Scanner tastatur = new Scanner(System.in); // Erzeugen eines Objekts der Klasse Scanner
 
