@@ -5,22 +5,69 @@ class Fahrkartenautomat {
 
 		Scanner tastatur = new Scanner(System.in);
 
-		double zuZahlenderBetrag;
+		double zuZahlenderBetrag = 0;
 		double eingezahlterGesamtbetrag;
 		double eingeworfeneMuenze;
 		double rueckgabebetrag;
 		double nochZuZahlen;
-		int anzahlTickets;  
+		double anzahlTickets = 0;  
+		int ticketWahl;
 
-		// Geldbetrag eingeben
-		System.out.print("Zu zahlender Betrag (Euro): ");
-		zuZahlenderBetrag = tastatur.nextDouble();
-		
-		// Anzahl der Tickets
-		System.out.print("Anzahl der Tickets: ");
-		anzahlTickets = tastatur.nextInt();
+		// Ticketpreis eingeben
+        System.out.println("Fahrkartenbestellvorgang:\n"
+        		+ "=========================\n"
+        		+ "\n"
+        		+ "Wählen Sie ihre Wunschfahrkarte für Berlin AB aus:\n"
+        		+ "  Kurzstrecke AB [2,00 EUR] (1)\n"
+        		+ "  Einzelfahrschein AB [3,00 EUR] (2)\n"
+        		+ "  Tageskarte AB [8,80 EUR] (3)\n"
+        		+ "  4-Fahrten-Karte AB [9,40 EUR] (4)");
+        
+        
 
-		zuZahlenderBetrag = zuZahlenderBetrag * anzahlTickets;
+        System.out.println("Ihre Wahl: ");
+        ticketWahl = tastatur.nextInt();
+        
+        while (ticketWahl > 4 || ticketWahl < 1){
+       	 System.out.println("Keine Tickets zu dieser Kategorie verfügbar");
+       	 
+       	 System.out.println("Ihre Wahl: ");
+            ticketWahl = tastatur.nextInt();
+       }
+        
+        
+        if (ticketWahl==1) {
+        	zuZahlenderBetrag=2.0;
+        }
+        if(ticketWahl==2){
+        	zuZahlenderBetrag=3.0;
+        }
+        if(ticketWahl==3){
+        	zuZahlenderBetrag=8.8;
+        }
+        if(ticketWahl==4){
+        	zuZahlenderBetrag=9.4;
+        }
+        
+        
+        if (zuZahlenderBetrag < 0) {
+            zuZahlenderBetrag = 1;
+            System.out.println("Fehlerhafte Eingabe - Ticketpreis wird auf 1 gesetzt");
+        }	
+        
+        // Anzahl der Tickets eingeben
+        
+        
+        while (anzahlTickets < 1 || anzahlTickets > 10) {
+        	System.out.println("Anzahl der Tickets: ");
+            anzahlTickets = tastatur.nextInt();
+            
+         if (anzahlTickets < 1 || anzahlTickets > 10) {
+        	 System.out.println("Die Anzahl der Tickets muss zwischen 1 und 10 sein ");
+         }
+        }
+
+        zuZahlenderBetrag = zuZahlenderBetrag * anzahlTickets;
 		
 		// Geldeinwurf
 		eingezahlterGesamtbetrag = 0.0;
