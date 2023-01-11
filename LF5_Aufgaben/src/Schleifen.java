@@ -16,7 +16,7 @@ public class Schleifen {
 		System.out.print("Bitte geben Sie eine Zahl ein: ");
 		n = tastatur.nextInt();
 		
-		
+		 
 		for (i=0; i<=n; i++) {
 		System.out.println(i);
 		
