@@ -11,10 +11,12 @@ class Fahrkartenautomat {
 		double rueckgabebetrag;
 		double nochZuZahlen;
 		double anzahlTickets = 0;  
-		int ticketWahl;
+		int ticketWahl = 0;
 
 		// Ticketpreis eingeben
-        System.out.println("Fahrkartenbestellvorgang:\n"
+       
+		
+		System.out.println("\nFahrkartenbestellvorgang:\n"
         		+ "=========================\n"
         		+ "\n"
         		+ "Wählen Sie ihre Wunschfahrkarte für Berlin AB aus:\n"
@@ -22,18 +24,16 @@ class Fahrkartenautomat {
         		+ "  Einzelfahrschein AB [3,00 EUR] (2)\n"
         		+ "  Tageskarte AB [8,80 EUR] (3)\n"
         		+ "  4-Fahrten-Karte AB [9,40 EUR] (4)");
-        
-        
 
         System.out.println("Ihre Wahl: ");
         ticketWahl = tastatur.nextInt();
         
-        while (ticketWahl > 4 || ticketWahl < 1){
-       	 System.out.println("Keine Tickets zu dieser Kategorie verfügbar");
+   //     while (ticketWahl > 4 || ticketWahl < 1){
+  //     	 System.out.println("Keine Tickets zu dieser Kategorie verfügbar");
        	 
-       	 System.out.println("Ihre Wahl: ");
-            ticketWahl = tastatur.nextInt();
-       }
+  //     	 System.out.println("Ihre Wahl: "); 
+ //        ticketWahl = tastatur.nextInt();
+  //     }
         
         
         if (ticketWahl==1) {
@@ -48,6 +48,7 @@ class Fahrkartenautomat {
         if(ticketWahl==4){
         	zuZahlenderBetrag=9.4;
         }
+        
         
         
         if (zuZahlenderBetrag < 0) {
@@ -66,8 +67,9 @@ class Fahrkartenautomat {
         	 System.out.println("Die Anzahl der Tickets muss zwischen 1 und 10 sein ");
          }
         }
-
+        
         zuZahlenderBetrag = zuZahlenderBetrag * anzahlTickets;
+
 		
 		// Geldeinwurf
 		eingezahlterGesamtbetrag = 0.0;
