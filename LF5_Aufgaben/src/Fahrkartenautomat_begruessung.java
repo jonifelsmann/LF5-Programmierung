@@ -4,12 +4,20 @@ class Fahrkartenautomat_begruessung {
 	
 		// Begrüßung
 		
-			begruessung();
 		
-	static void main (String[] args) {
-			System.out.print(begruessung);
+	static void begruessung() {
+		String begruessung="Herzlich Willkommen!";
+		
+		System.out.println(begruessung);
 		
 		}
+	
+	//static void verabschiedung() {
+	//	String begruessung="Ciao!";
+	//	
+	//	System.out.print(begruessung);
+	//	
+	//	}
 		
 	
 	
@@ -24,9 +32,11 @@ class Fahrkartenautomat_begruessung {
 		double nochZuZahlen;
 		double anzahlTickets = 0;  
 		int ticketWahl = 0;
-		String begruessung="Herzlich Willkommen!";
 		 
-			
+		begruessung();	
+	//verabschiedung();
+		
+		
 		// Ticketpreis eingeben
        
 		
