@@ -20,6 +20,11 @@ class Fahrkartenautomat_begruessung {
 	//	}
 		
 	
+	public static double fahrkartenbestellungErfassen(Scanner tastatur) {
+		
+		
+	}
+	
 	
 	public static void main(String[] args) {
 
