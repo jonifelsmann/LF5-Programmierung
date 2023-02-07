@@ -1,6 +1,18 @@
 import java.util.Scanner;
 
-class Fahrkartenautomat {
+class Fahrkartenautomat_begruessung {
+	
+		// Begrüßung
+		
+			begruessung();
+		
+	static void main (String[] args) {
+			System.out.print(begruessung);
+		
+		}
+		
+	
+	
 	public static void main(String[] args) {
 
 		Scanner tastatur = new Scanner(System.in);
@@ -12,7 +24,9 @@ class Fahrkartenautomat {
 		double nochZuZahlen;
 		double anzahlTickets = 0;  
 		int ticketWahl = 0;
-
+		String begruessung="Herzlich Willkommen!";
+		 
+			
 		// Ticketpreis eingeben
        
 		
@@ -136,4 +150,5 @@ class Fahrkartenautomat {
 
 		tastatur.close();
 	}
+	
 }
