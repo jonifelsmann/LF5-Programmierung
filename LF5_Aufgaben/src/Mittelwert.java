@@ -20,10 +20,8 @@ public class Mittelwert {
       // =================================
       System.out.printf("Der Mittelwert von %.2f und %.2f ist %.2f\n", x, y, m);
    }
-   
-   // Deklaration der Funktion berechneMittelwert:
-   // ===========================================
-   static double berechneMittelwert(double x1, double x2) {
+
+     static double berechneMittelwert(double x1, double x2) {
       
       double mittelwert;
       
