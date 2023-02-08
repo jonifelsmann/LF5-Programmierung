@@ -19,31 +19,13 @@ class Fahrkartenautomat_begruessung {
 	//	
 	//	}
 		
-	
+	// Kartenauswahl und Ticketanzahl
 	public static double fahrkartenbestellungErfassen(Scanner tastatur) {
 		
-		
-	}
-	
-	
-	public static void main(String[] args) {
-
-		Scanner tastatur = new Scanner(System.in);
-
+		double anzahlTickets = 0;
 		double zuZahlenderBetrag = 0;
-		double eingezahlterGesamtbetrag;
-		double eingeworfeneMuenze;
-		double rueckgabebetrag;
-		double nochZuZahlen;
-		double anzahlTickets = 0;  
 		int ticketWahl = 0;
-		 
-		begruessung();	
-	//verabschiedung();
 		
-		
-		// Ticketpreis eingeben
-       
 		
 		System.out.println("\nFahrkartenbestellvorgang:\n"
         		+ "=========================\n"
@@ -98,20 +80,50 @@ class Fahrkartenautomat_begruessung {
         }
         
         zuZahlenderBetrag = zuZahlenderBetrag * anzahlTickets;
-
+        return zuZahlenderBetrag;
 		
+	}
+	
 		// Geldeinwurf
-		eingezahlterGesamtbetrag = 0.0;
-		nochZuZahlen = 0.0;
-		while (eingezahlterGesamtbetrag < zuZahlenderBetrag) {
-			nochZuZahlen = zuZahlenderBetrag - eingezahlterGesamtbetrag;
-			System.out.print("Noch zu zahlen: ");
-			System.out.printf("%.2f ", nochZuZahlen);
-			System.out.print("Euro");
-			System.out.print("\nEingabe (mind. 5 Cent, höchstens 2 Euro): ");
-			eingeworfeneMuenze = tastatur.nextDouble();
-			eingezahlterGesamtbetrag = eingezahlterGesamtbetrag + eingeworfeneMuenze;
-		}
+	public static double fahrkartenBezahlen(Scanner tastatur, double zuZahlenderBetrag) {
+		double eingezahlterGesamtbetrag;
+		double nochZuZahlen;
+		double eingeworfeneMuenze;
+		
+				eingezahlterGesamtbetrag = 0.0;
+				nochZuZahlen = 0.0;
+				while (eingezahlterGesamtbetrag < zuZahlenderBetrag) {
+					nochZuZahlen = zuZahlenderBetrag - eingezahlterGesamtbetrag;
+					System.out.print("Noch zu zahlen: ");
+					System.out.printf("%.2f ", nochZuZahlen);
+					System.out.print("Euro");
+					System.out.print("\nEingabe (mind. 5 Cent, höchstens 2 Euro): ");
+					eingeworfeneMuenze = tastatur.nextDouble();
+					eingezahlterGesamtbetrag = eingezahlterGesamtbetrag + eingeworfeneMuenze;
+				}
+				return eingezahlterGesamtbetrag;
+		
+	}
+	
+	
+	public static void main(String[] args) {
+
+		Scanner tastatur = new Scanner(System.in);
+
+		double eingeworfeneMuenze;
+		double rueckgabebetrag;  
+		 
+		begruessung();	
+	//verabschiedung();
+		
+		
+		// Ticketpreis eingeben
+
+
+		double zuZahlenderBetrag;
+		
+		zuZahlenderBetrag=fahrkartenbestellungErfassen(tastatur);
+		
 		
 		// Fahrscheinausgabe
 		System.out.println("\nFahrschein wird ausgegeben");
@@ -125,6 +137,11 @@ class Fahrkartenautomat_begruessung {
 			}
 		}
 		System.out.println("\n\n");
+		
+		// Geldeinwurf
+		
+		double eingezahlterGesamtbetrag;
+		eingezahlterGesamtbetrag = fahrkartenBezahlen(tastatur, zuZahlenderBetrag);
 		
 		// Rückgeldberechnung und -ausgabe
 		rueckgabebetrag = eingezahlterGesamtbetrag - zuZahlenderBetrag;
