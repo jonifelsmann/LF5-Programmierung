@@ -39,12 +39,21 @@ class Fahrkartenautomat_begruessung {
         System.out.println("Ihre Wahl: ");
         ticketWahl = tastatur.nextInt();
         
-   //     while (ticketWahl > 4 || ticketWahl < 1){
-  //     	 System.out.println("Keine Tickets zu dieser Kategorie verfügbar");
-       	 
-  //     	 System.out.println("Ihre Wahl: "); 
- //        ticketWahl = tastatur.nextInt();
-  //     }
+        while(true) {
+        
+        	System.out.println("Ihre Wahl: "); 
+    		ticketWahl = tastatur.nextInt();
+    		
+    		if (!((ticketWahl>0 && ticketWahl<5) || ticketWahl == 9)) {
+    		System.out.println("Keine Tickets zu dieser Kategorie verfügbar");
+    		
+    		}
+    	
+    		else {
+    			break;
+    		}
+        	
+        }
         
         
         if (ticketWahl==1) {
