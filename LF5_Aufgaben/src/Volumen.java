@@ -1,17 +1,27 @@
+import java.util.Scanner;
 
 public class Volumen {
 	
-	public static void volumenberechnung(double volumenberechnung) {
+	public static double volumenberechnung(double volumengesamt) {
 		double laenge;
 		
-		volumegesamt = laenge^3;
+		Scanner tastatur = new Scanner(System.in);
+		
+	 System.out.print("Wie viel cm beträgt die Länge der Würfelseite?: ");
+	        laenge = tastatur.nextDouble();
+		
+		volumengesamt = Math.pow(laenge,3);
+		
+		return volumengesamt;
 		
 	}
 
-	public static void main() {
+	public static void main(String[] args) {
 		
-		volumenberechnung;
-		System.out.println(volumegesamt);
+		double volumengesamt=0;
+		
+		volumengesamt = volumenberechnung(volumengesamt);
+		System.out.println(volumengesamt);
 	}
 	
 }
