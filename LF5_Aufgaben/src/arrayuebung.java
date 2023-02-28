@@ -34,24 +34,44 @@ public class arrayuebung {
 
     // 3. Durchlaufen des gesamten Arrays und Ausgabe des Inhalts.
 	
-	for (int i = 0; i<=GanzeZahlen.length-1; i++) {
+	for (int i = 1; i<=GanzeZahlen.length-1; i++) {
 		
 		System.out.println(GanzeZahlen[i]);
 	}
 
     // 4. Das Array mit allen ganzen Zahlen von 1 bis 100 befüllen.
 	
-	
+	for (int i = 1; i<=GanzeZahlen.length-1; i++) {
+		
+		GanzeZahlen [i] = i+1;
+	}
 
-    // 5. Geben Sie den Wert an der 89. Position des Arrays aus.          
+    // 5. Geben Sie den Wert an der 89. Position des Arrays aus.    
+	
+	System.out.println(GanzeZahlen[88]);
 
     // 6. Ändern Sie den Wert des Arrayelements mit dem Index 49 zu 1060.
+	
+	GanzeZahlen [49] = 1060;
 
     // Außerdem ändern Sie den Wert an der ersten und der letzte Stelle des Arrays zu 2023.
+			
+	GanzeZahlen [0] = 2023;
+	GanzeZahlen [99] = 2023;
 
     // 7. Erneutes Ausgeben des Arrayinhalts.  Darstellung: Index und zugehöriger Inhalt (z.B. Index 6 - Inhalt: 7)
+	
+	
 
     // 8. Berechnung des Durchschnitts aller Arrayelemente
+	
+	int summe=0;
+	for (int i = 0; i<=GanzeZahlen.length-1; i++) {
+		
+		
+		summe += GanzeZahlen [i];
+	}
+	System.out.println(summe/GanzeZahlen.length);
 	
 	
 	}
