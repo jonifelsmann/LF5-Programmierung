@@ -46,7 +46,7 @@ class Fahrkartenautomat_begruessung {
 		
 		
 		for (int i = 0; i <=ticketpreis.length-1; i++) {
-		System.out.println(ticketpreis);
+		System.out.println(ticketpreis); 
 		}
 		
 		
