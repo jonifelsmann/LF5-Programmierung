@@ -38,29 +38,29 @@ class Fahrkartenautomat_begruessung {
 */
 		
 		
-		double[] ticketpreis = {3.0, 3.5, 3.8, 2.0, 8.6, 9.2, 10.0, 9.4, 12.6, 13.8, 25.5, 26.0, 26.5};
-		String[] ticketname = {"Einzelfahrschein AB","Einzelfahrschein BC","Einzelfahrschein ABC",
-			"Kurzstrecke AB","Tageskarte AB","Tageskarte BC","Tageskarte ABC","4-Fahrten-Karte AB",
-			"4-Fahrten-Karte BC","4-Fahrten-Karte ABC","Kleingruppen-Tageskarte AB","Kleingruppen-Tageskarte BC",
-			"Kleingruppen-Tageskarte ABC"};
+		double[] ticketpreis = {3.00, 3.50, 3.80, 2.00, 8.60, 9.20, 10.00, 9.40, 12.60, 13.80, 25.50, 26.00, 26.50};
+		String[] ticketname = {"[1] Einzelfahrschein AB","[2] Einzelfahrschein BC","[3] Einzelfahrschein ABC",
+			"[4] Kurzstrecke AB","[5] Tageskarte AB","[6] Tageskarte BC","[7] Tageskarte ABC","[8] 4-Fahrten-Karte AB",
+			"[9] 4-Fahrten-Karte BC","[10] 4-Fahrten-Karte ABC","[11] Kleingruppen-Tageskarte AB","[12] Kleingruppen-Tageskarte BC",
+			"[13] Kleingruppen-Tageskarte ABC"};
 		
 		
-		for (int i = 0; i <=ticketpreis.length-1; i++) {
-		System.out.println(ticketpreis); 
+		for (int i=0; i <ticketpreis.length; i++) {
+		System.out.println("\t" + ticketname[i] + "\t" + "\t" + ticketpreis[i] + " Euro" + "\t"); 
 		}
 		
 		
 		
 		
-        System.out.println("Ihre Wahl: ");
-        ticketWahl = tastatur.nextInt();
+    //    System.out.println("Ihre Wahl: ");
+     //   ticketWahl = tastatur.nextInt();
         
         while(true) {
         
         	System.out.println("Ihre Wahl: "); 
     		ticketWahl = tastatur.nextInt();
     		
-    		if (!((ticketWahl>0 && ticketWahl<5) || ticketWahl == 9)) {
+    		if (!((ticketWahl>0 && ticketWahl<ticketpreis.length) || ticketWahl == ticketpreis.length)) {
     		System.out.println("Keine Tickets zu dieser Kategorie verfügbar");
     		
     		}
@@ -72,7 +72,7 @@ class Fahrkartenautomat_begruessung {
         }
         
         
-        if (ticketWahl==1) {
+  /*      if (ticketWahl==1) {
         	zuZahlenderBetrag=2.0;
         }
         if(ticketWahl==2){
@@ -85,6 +85,8 @@ class Fahrkartenautomat_begruessung {
         	zuZahlenderBetrag=9.4;
         }
         
+  */      
+       zuZahlenderBetrag = ticketpreis[ticketWahl-1];
         
         
         if (zuZahlenderBetrag < 0) {
