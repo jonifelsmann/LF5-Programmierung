@@ -46,7 +46,7 @@ class Fahrkartenautomat_begruessung {
 		
 		
 		for (int i=0; i <ticketpreis.length; i++) {
-		System.out.println("\t" + ticketname[i] + "\t" + "\t" + ticketpreis[i] + " Euro" + "\t"); 
+			System.out.printf("\t%-30s %10.2f EUR %5d\n", ticketname[i], ticketpreis[i], i + 1);
 		}
 		
 		
