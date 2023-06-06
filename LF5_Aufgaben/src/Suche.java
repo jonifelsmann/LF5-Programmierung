@@ -18,10 +18,10 @@ public class Suche {
 		}
 		
 		if(gefunden) {
-			System.out.println("Die Zahl " + gefunden + " ist in dem Array vorhanden");
+			System.out.println("Die Zahl " + zahl + " ist in dem Array vorhanden");
 		}
 		else {
-			System.out.println("Die Zahl " + gefunden + " ist nicht in dem Array vorhanden");
+			System.out.println("Die Zahl " + zahl + " ist nicht in dem Array vorhanden");
 		}
 	}
 
